@@ -1,0 +1,2 @@
+D:\Proyectos\Examen\Examen4\obj\Debug\Examen4.csproj.AssemblyReference.cache
+D:\Proyectos\Examen\Examen4\obj\Debug\Examen4.csproj.CoreCompileInputs.cache

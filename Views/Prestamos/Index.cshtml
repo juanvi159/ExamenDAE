@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Prestamos>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+
+<p>
+    <!-- Hipervinculo nombre, metodo-->
+    @Html.ActionLink("Nueva Categoria", "Create")
+</p>
+
+<table class="table table-striped table-hover">
+    <tr>
+        <th>
+            <!-- Cabecera de la lista-->
+            @Html.DisplayNameFor(model => model.IdPrestamo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdLibro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FecPrestamo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FecDevolucion)
+        </th>
+    </tr>
+    <!-- recorre cada entidad de la coleccion-->
+    @foreach (var item in Model)
+    {
+<tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdPrestamo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdLibro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FecPrestamo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FecDevolucion)
+        </td>
+
+    <td>
+        <!-- Hipervinculo nombre, metodo/ NO FUNCIONAL POR EL MOMENTO-->
+        @Html.ActionLink("Editar", "Edit", new { id = item.IdPrestamo }) |
+        @Html.ActionLink("Detalles", "Details", new { id = item.IdPrestamo }) |
+        @Html.ActionLink("Borrar", "Delete", new { id = item.IdPrestamo })
+    </td>
+</tr>
+    }
+</table>
